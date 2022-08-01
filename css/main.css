@@ -1,0 +1,189 @@
+body {
+    text-align: center;
+    background-image: url("../img/appBackground1.jpg");
+    background-size: cover;
+}
+
+.table-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+table {
+    align-self: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 2px solid black;
+    width: 12em;
+    height: 3em;
+    text-align: center;
+    background-color: rgb(224, 210, 188);
+}
+
+.table-btns {
+    display: flex;
+    justify-content: center;
+}
+
+.table-action-btns{
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    box-sizing: border-box;
+    cursor: pointer;    
+}
+
+.next-page, .previous-page {
+    align-items: flex-start;
+    margin-left: 15%;
+    margin-right: 15%;
+    border-radius: 4px;
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-family: "JetBrains Mono", monospace;
+    height: 40px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.next-page:hover, .previous-page:hover, .table-action-btns:hover, .close-modal:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+
+.next-page:disabled, .previous-page:disabled, .table-action-btns:disabled, .close-modal:disabled {
+    background-color: #c7c7ce;
+    box-shadow: inset 0px 0px 4px 0px black;
+}
+
+.read-modal {
+    position: absolute;
+    left: 150%;
+    top: 10%;
+    height: 511px;
+    width: 310px;
+    transition: .5s;
+}
+
+.read-modal.open {
+    left: 43%;
+    top: 15%;
+}
+
+.book-img {
+    position: relative;
+    right: 60px;
+    top: 35px;
+    width: 95px;
+    height: 110px;
+}
+
+.read-modal .book-title {
+    position: relative;
+    text-align: left;
+    left: 150px;
+    bottom: 95px;
+    height: 110px;
+    width: 110px;
+    font-size: larger;
+    color: rgb(253, 252, 250);
+}
+
+.read-modal .book-price {
+    position: relative;
+    left: 95px;
+    bottom: 120px;
+    font-size: medium;
+    color: rgb(253, 252, 250);
+}
+
+.read-modal .book-side-title {
+    position: relative;
+    text-align:justify;
+    left: 141px;
+    bottom: 110px;
+    transform: rotate(90.2deg);
+    color: rgb(44, 44, 44);
+    font-size: larger;
+}
+
+.read-modal .book-summery {
+    position: relative;
+    text-align: start;
+    left: 45px;
+    bottom: 160px;
+    height: 110px;
+    width: 225px;
+    font-size: medium;
+    color: rgb(253, 252, 250);
+}
+
+
+.read-modal .book-author {
+    position: relative;
+    right: 55px;
+    bottom: 85px;
+    font-size: large;
+    color: rgb(43, 43, 43);
+    font-weight: bo;
+}
+
+.close-modal {
+    position: relative;
+    right: 85px;
+    bottom: 90px;
+    color: #0f1111;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Amazon Ember", Arial, sans-serif;
+    height: 29px;
+    font-size: 13px;
+    padding: 0 11px;
+    text-align: center;
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    box-sizing: border-box;
+    cursor: pointer; 
+}
+
+/* .close-modal:hover {
+    background-color: #74777b #68696e #55575b;
+} */
+
+.modal-rate {
+    position: relative;
+    text-align: center;
+    bottom: 155px;
+    left: 65px;
+}
+
+.rate-value {
+    width: 35px;
+    height: 20px;
+    text-align: center;
+    background-color: white;
+    border: 1px solid #dadada;
+}
+
+.modal-rate.remove {
+    position: relative;
+    left: 150px;
+    height: 25px;
+    width: 25px;
+    padding: 0;
+}
+
+.read-modal .book-id {
+    position: relative;
+    right: 55px;
+    top: 150px;
+    font-size: medium;
+    color: rgb(41, 41, 41);
+}

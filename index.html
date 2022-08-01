@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Shop - Omer Rafaeli</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body onload="onInit()">
+    <h1>The BookShop</h1>
+    <section class="book-filter">
+        <h2>Filter</h2>
+        <select class="filter-rate-select" onchange="onSetFilterBy({rate: this.value})"></select>
+        <label>
+            Min Price:
+            <input type="range" min="0" max="100" value="50" class="filter-price-range"
+            onchange="this.title=this.value;onSetFilterBy({minPrice: this.value})" />
+        </label>
+        <hr />
+        <div>
+            <label for="">
+                <button onclick="onAddBook()">Add book</button>
+                <input type="text" class="book-name" placeholder="New Book Name?" onfocus="this.value=''">
+                <input type="text" class="book-price" placeholder="New Book Price?" onfocus="this.value=''">
+            </label>
+            Sort by:
+            <select class="sort-by" onchange="onSetSortBy()">
+                <option value="">Select Sorting</option>
+                <option value="rate">Rate</option>
+                <option value="price">Price</option>
+            </select>
+            <label>
+                Descending
+                <input class="sort-desc" type="checkbox" oninput="onSetSortBy()" />
+            </label>
+        </div>
+    </section>
+    <section class="table-section">
+        <table>
+            <thead>
+                <th>Id</th>
+                <th>rate</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+        <div class="table-btns">
+            <button onclick="onPreviousPage()" class="previous-page" disabled> &lt&lt&lt Back </button>
+            <button onclick="onNextPage()" class="next-page">Next >>></button>
+        </div>
+    </section>
+
+
+    <div class="read-modal">
+        <img class="book-img" src="img/author.png" alt="">
+        <h1 class="book-title">this is a title</h1>
+        <h2 class="book-id">sdgsaf</h2>
+        <h2 class="book-side-title">this is a title</h2>
+        <h4 class="book-summery"></h4>
+        <h2 class="book-author">Omer Rafaeli</h2>
+        <h2 class="book-price">89$</h2>
+        <button class="close-modal" onclick="onCloseModal()">Back</button>
+        <section class="modal-rate">
+            <input type="button" value="-" class="minus" onclick="onChangeBookRating(this.value)">
+            <input class="rate-value" type="number" value="1" disabled>
+            <input type="button" value="+" class="plus" onclick="onChangeBookRating(this.value)">
+        </section>
+    </div>
+    <script src="js/service/util.service.js"></script>
+    <script src="js/service/storage.service.js"></script>
+    <script src="js/service/book.service.js"></script>
+    <script src="js/book.controller.js"></script>
+</body>
+
+</html>
